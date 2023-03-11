@@ -14,6 +14,9 @@ class Empleado(models.Model):
     creado = models.DateTimeField(auto_now_add=True)
     modificado = models.DateTimeField(auto_now=True)
 
+    def __str__(self) -> str:
+        return self.nombre_completo
+
 
 class Beneficiario(models.Model):
     SEXOS = (
@@ -34,3 +37,6 @@ class Beneficiario(models.Model):
     sexo = models.CharField(max_length=1, choices=SEXOS, default='M')
     creado = models.DateTimeField(auto_now_add=True)
     modificado = models.DateTimeField(auto_now=True)
+
+    def __str__(self) -> str:
+        return self.nombre_completo
