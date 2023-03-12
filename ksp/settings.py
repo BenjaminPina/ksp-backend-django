@@ -126,3 +126,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads/')
 MEDIA_URL = '/'
 
 APPEND_SLASH = False
+
+CORS_ALLOW_ALL_ORIGINS = True
