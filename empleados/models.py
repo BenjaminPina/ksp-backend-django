@@ -10,7 +10,7 @@ class Empleado(models.Model):
     )
     salario = models.FloatField(default=0.0)
     estatus = models.BooleanField(default=True)
-    fecha_contratación = models.DateField(verbose_name='Fecha de contratación')
+    fecha_contratacion = models.DateField(verbose_name='Fecha de contratación')
     creado = models.DateTimeField(auto_now_add=True)
     modificado = models.DateTimeField(auto_now=True)
 
