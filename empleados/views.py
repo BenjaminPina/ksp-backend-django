@@ -4,7 +4,7 @@ from rest_framework import filters, status
 from django_filters.rest_framework import DjangoFilterBackend
 
 from .models import Empleado, Beneficiario
-from .serializers import EmpleadoSerializer
+from .serializers import EmpleadoSerializer, BeneficiarioSerializer
 
 
 class EmpleadoViewSet(ModelViewSet):
@@ -28,3 +28,15 @@ class EmpleadoViewSet(ModelViewSet):
         instance.save()
 
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class BeneficiarioViewSet(ModelViewSet):
+    queryset = Beneficiario.objects.all()
+    serializer_class = BeneficiarioSerializer
+    search_fields = ['nombre_completo']
+    ordering_fields = ['nombre_completo']
+    filter_backends = [
+        DjangoFilterBackend,
+        filters.OrderingFilter,
+        filters.SearchFilter
+    ]
